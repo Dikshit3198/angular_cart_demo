@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ProductModel, Products } from '../../shared/models/products.model';
 
 @Component({
@@ -8,7 +8,8 @@ import { ProductModel, Products } from '../../shared/models/products.model';
 })
 export class ProductAlertsComponent implements OnInit {
 
-  @Input() product!: ProductModel;
+  @Input() product: ProductModel;
+  @Output() notify = new EventEmitter();
 
   constructor() { }
 
