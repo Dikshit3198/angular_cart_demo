@@ -13,22 +13,22 @@ export class LandingPageComponent implements OnInit {
   }
 
   
-  addQty(distance: any = 0) {
-      this.fireBaseAnSvc.firebaseAnalyticsEvents('add_to_cart', 'add_to_cart');
-      this.onAdd.emit(); 
+  // addQty(distance: any = 0) {
+  //     this.fireBaseAnSvc.firebaseAnalyticsEvents('add_to_cart', 'add_to_cart');
+  //     this.onAdd.emit(); 
 
-  }
+  // }
 
-  quantityInput(quantity) {
-    if (quantity < this.selectedQuantity) {
-      this.onRemove.emit();
-    }
-    else {
-      this.onAdd.emit();
-    }
-    let multiply = 1 / GlobalVariable.decimal_quantity_step;
-    this.selectedQuantity = parseFloat(((Math.ceil(quantity * multiply) / multiply)).toFixed(2));
-    this.quantityUpdate.emit(this.selectedQuantity);
-  }
+  // quantityInput(quantity) {
+  //   if (quantity < this.selectedQuantity) {
+  //     this.onRemove.emit();
+  //   }
+  //   else {
+  //     this.onAdd.emit();
+  //   }
+  //   let multiply = 1 / GlobalVariable.decimal_quantity_step;
+  //   this.selectedQuantity = parseFloat(((Math.ceil(quantity * multiply) / multiply)).toFixed(2));
+  //   this.quantityUpdate.emit(this.selectedQuantity);
+  // }
 
 }
